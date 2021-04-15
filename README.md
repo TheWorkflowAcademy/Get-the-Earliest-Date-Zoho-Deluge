@@ -1,5 +1,5 @@
 # Get-Earliest-Date-Zoho-Deluge
-A Deluge script that performs date comparison with a simple loop to get the earliest date from the list.
+A Deluge script that performs date comparison with a simple loop to get the earliest date from a list of dates.
 
 ## Core Idea
 Suppose you have a custom date field on the Accounts module of Zoho CRM called "First Deal Closing Date" that needs to display the closing date of the first Closed Won deal related to the Account. You need a script that iterates through all related Deals that are Closed Won, compare the closing dates, find the earliest closing date, then populate the date in that custom field.
