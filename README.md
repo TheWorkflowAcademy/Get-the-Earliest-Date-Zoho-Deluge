@@ -15,7 +15,7 @@ Suppose you have a custom date field on the Accounts module of Zoho CRM called "
     * The Deal ID is assigned to the *firstid* variable.
     * The Closing Date of the Deal is assigned to the *datecomp* variable.
 * After the iteration is complete, the *firstid* variable will no longer be an empty string and the *datecomp* variable will contain the earliest Closing Date among all the Deals.
-* Now that we have what we need, we can update the *datecomp* variable into the "First Deal Closing Date* field in Accounts.
+* Now that we have what we need, we can update the *datecomp* variable into the "First Deal Closing Date" field in Accounts.
 
 ```javascript
 allDeals = zoho.crm.getRelatedRecords("Deals","Accounts",accountid);
