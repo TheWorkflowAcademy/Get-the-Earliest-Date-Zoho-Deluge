@@ -1,0 +1,23 @@
+allDeals = zoho.crm.getRelatedRecords("Deals","Accounts",accountid);
+if (allDeals.size() > 0)
+{
+	// Counters
+	firstid = "";
+	datecomp = today.addYear(1); // Add as many years as necessary. We just want to make sure that the first deal enters the loop below.
+	for each  a in allDeals
+	{
+		if(a.get("Stage") == "Closed Won")
+		{
+			if(days360(a.get("Closing_Date"),datecomp) > 0)
+			{
+				firstid = a.get("id");
+				datecomp = a.get("Closing_Date");
+			}
+		}
+	}
+	if(firstid != "")
+	{
+		update = zoho.crm.updateRecord("Accounts",accountid,{"First_Deal_Closing_Date":datecomp});
+		info update;
+	}
+}
