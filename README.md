@@ -10,10 +10,10 @@ Suppose you have a custom date field on the Accounts module of Zoho CRM called "
 * Set the *firstid* variable as an empty string "".
 * Set the *datecomp* variable. The idea here is to set a future date that is definitely ahead of all Closed Won Deals. This is just to make sure that the first deal meets the date comparison criteria that we will set in the loop later.
 * Iterate through each Deal record in a `loop`, filter out only the Closed Won Deals, and set the date comparison criteria.
- * `days360(a.get("Closing_Date"),datecomp) > 0` - if the date is earlier than `datecomp`, it will meet the criteria.
- * Upon meeting the criteria,
-  * The Deal ID is assigned to the *firstid* variable.
-  * The Closing Date of the Deal is assigned to the *datecomp* variable.
+  * `days360(a.get("Closing_Date"),datecomp) > 0` - if the date is earlier than `datecomp`, it will meet the criteria.
+  * Upon meeting the criteria,
+    * The Deal ID is assigned to the *firstid* variable.
+    * The Closing Date of the Deal is assigned to the *datecomp* variable.
 * After the iteration is complete, the *firstid* variable will no longer be an empty string and the *datecomp* variable will contain the earliest Closing Date among all the Deals.
 * Now that we have what we need, we can update the *datecomp* variable into the "First Deal Closing Date* field in Accounts.
 
